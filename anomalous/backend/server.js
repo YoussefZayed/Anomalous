@@ -18,9 +18,11 @@ const connection = mongoose.connection;connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-const realEstateRouter = require('./routes/realestate');
+const sellerInfoRouter = require('./routes/sellerInfo');
+const buyerInfoRouter = require('./routes/buyerInfo');
 
-app.use('/realestate',realEstateRouter);
+app.use('/seller',sellerInfoRouter);
+app.use('/buyer',buyerInfoRouter);
 
 
 app.listen(port, () => {
