@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/form.css";
 
@@ -309,7 +310,7 @@ export default class CreateSeller extends Component {
   
   onSubmit(e){
     e.preventDefault();  
-    const exercise = {
+    const seller = {
       hearAboutUs : this.state.hearAboutUs,
       firstName : this.state.firstName,
       lastName : this.state.lastName,
@@ -348,9 +349,16 @@ export default class CreateSeller extends Component {
       agentName : this.state.agentName,
     };
     
-    console.log(exercise);
     
-    window.location = '/';
+    axios.post('http://localhost:5000/seller/add', seller).then(
+      (res) => {
+        console.log('Axios:',res);
+        console.log('Axios data:',res.data);
+        window.location = '/';
+      }).catch((err) => { console.log('Axios Error:', err); });
+  console.log(seller);
+  console.log("Posted?");
+    
   }
 
 

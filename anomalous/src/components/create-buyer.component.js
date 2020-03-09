@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/form.css";
 
 export default class CreateBuyer extends Component {
 
@@ -60,10 +63,15 @@ export default class CreateBuyer extends Component {
       maxPrice : this.state.maxPrice,
      
     };
-    
+    axios.post('http://localhost:5000/buyer/add', buyer).then(
+      (res) => {
+        console.log('Axios:',res);
+        console.log('Axios data:',res.data);
+        window.location = '/';
+      }).catch((err) => { console.log('Axios Error:', err); });
     console.log(buyer);
     
-    window.location = '/';
+
   }
 
 
