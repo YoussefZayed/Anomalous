@@ -562,7 +562,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">lotSize : </label>
+            <label className= "col-4">lot Size : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -574,7 +574,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">yearBuilt : </label>
+            <label className= "col-4">year Built : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -586,7 +586,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">typeOfRepair : </label>
+            <label className= "col-4"> Type Of Repair : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -598,7 +598,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">costForMint : </label>
+            <label className= "col-4">Cost For Mint : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -610,7 +610,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> sellReason: </label>
+            <label className= "col-4"> sell Reason: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -634,7 +634,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> owedOnProp: </label>
+            <label className= "col-4"> Owed On Prop: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -646,7 +646,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> takePayoff: </label>
+            <label className= "col-4"> Take Payoff: </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -658,7 +658,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">payAndTaxIsCurrent : </label>
+            <label className= "col-4">Pay And Tax Is Current : </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -670,7 +670,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">askPrice : </label>
+            <label className= "col-4">Asking Price : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -682,7 +682,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> priceFlexible: </label>
+            <label className= "col-4"> Price Flexible: </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -694,7 +694,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> assessedValue: </label>
+            <label className= "col-4"> Assessed Value: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -706,7 +706,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">dateSellerBought : </label>
+            <label className= "col-4">Date Seller Bought Home: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -718,7 +718,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">originalSellerPrice : </label>
+            <label className= "col-4">Original Price : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -730,7 +730,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> schoolDistrict: </label>
+            <label className= "col-4"> School District: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -742,7 +742,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> quickComps: </label>
+            <label className= "col-4"> Quick Comps: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -754,7 +754,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">makingOffer : </label>
+            <label className= "col-4">Making Offer : </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -766,7 +766,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">offerPrice : </label>
+            <label className= "col-4">Offer Price : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -779,7 +779,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">agentName : </label>
+            <label className= "col-4">Agent Name : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -793,7 +793,7 @@ export default class CreateSeller extends Component {
           </br>
 
           <div className="form-group">
-            <input type="submit" value="Create Seller Info" className="btn btn-primary" />
+            <input type="submit" value="Add Seller Info" className="btn btn-primary" />
           </div>
           </form>
         </div>

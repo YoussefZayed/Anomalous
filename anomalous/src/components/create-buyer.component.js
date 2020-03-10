@@ -141,7 +141,7 @@ export default class CreateBuyer extends Component {
         </div>
         
         <div className= "from-group row">
-          <label className= "col-4">wantrehab: </label>
+          <label className= "col-4">want rehab: </label>
           <input 
               type="checkbox" 
               className="form-control col-8"
@@ -153,7 +153,7 @@ export default class CreateBuyer extends Component {
 
         
         <div className= "from-group row">
-          <label className= "col-4">rehabTeamReady: </label>
+          <label className= "col-4">Rehab Team Ready: </label>
           <input 
               type="checkbox" 
               className="form-control col-8"
@@ -164,7 +164,7 @@ export default class CreateBuyer extends Component {
         </div>
         
         <div className= "from-group row">
-          <label className= "col-4">areaTargets: </label>
+          <label className= "col-4">Area Targets: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -175,7 +175,7 @@ export default class CreateBuyer extends Component {
         </div>
         
         <div className= "from-group row">
-          <label className= "col-4">propertiesBoughtLastYear: </label>
+          <label className= "col-4">Properties Bought LastYear: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -186,7 +186,7 @@ export default class CreateBuyer extends Component {
         </div>
         
         <div className= "from-group row">
-          <label className= "col-4">propertiesBoughtThisYear: </label>
+          <label className= "col-4">properties Bought This Year: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -208,7 +208,7 @@ export default class CreateBuyer extends Component {
         </div>
                 
         <div className= "from-group row">
-          <label className= "col-4">financeMethod: </label>
+          <label className= "col-4">Finance Method: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -219,7 +219,7 @@ export default class CreateBuyer extends Component {
         </div>
                 
         <div className= "from-group row">
-          <label className= "col-4">typeOfProperty: </label>
+          <label className= "col-4">Type Of Property: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -230,7 +230,7 @@ export default class CreateBuyer extends Component {
         </div>
                 
         <div className= "from-group row">
-          <label className= "col-4">equityOrCOCRPreferance: </label>
+          <label className= "col-4">equity Or COCR Preferance: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -241,7 +241,7 @@ export default class CreateBuyer extends Component {
         </div>
                 
         <div className= "from-group row">
-          <label className= "col-4">equityOrCOCRExpectation: </label>
+          <label className= "col-4">equity Or COCR Expectation: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -252,7 +252,7 @@ export default class CreateBuyer extends Component {
         </div>
                 
         <div className= "from-group row">
-          <label className= "col-4">maxPrice: </label>
+          <label className= "col-4">max Price: </label>
           <input 
               type="text" 
               className="form-control col-8"
@@ -266,7 +266,7 @@ export default class CreateBuyer extends Component {
           </br>
 
           <div className="form-group">
-            <input type="submit" value="Create Seller Info" className="btn btn-primary" />
+            <input type="submit" value="Add Buyer Info" className="btn btn-primary" />
           </div>
           </form>
         </div>
