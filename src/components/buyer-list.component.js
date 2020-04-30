@@ -24,7 +24,7 @@ import axios from 'axios';
     }
   
     componentDidMount() {
-      axios.get('http://localhost:5000/buyer/')
+      axios.get('/buyer/')
        .then(response => {
          this.setState({ buyers: response.data });
        })
@@ -34,10 +34,12 @@ import axios from 'axios';
     }
   
     deletebuyer(id) {
-      axios.delete('http://localhost:5000/buyer/'+id)
-        .then(res => console.log(res.data));  this.setState({
+      axios.delete('/buyer/'+id)
+        .then(res => console.log(res.data))
+        .catch(err => console.log("Oops, there was an error with deleteing please fix this asap, thx only works in chrome for some reason :"+err));  
+        this.setState({
         buyers: this.state.buyers.filter(el => el._id !== id)
-      })
+      });
     }
   
     buyerList() {

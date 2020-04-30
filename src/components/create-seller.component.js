@@ -3,7 +3,7 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/form.css";
 
-export default class EditSeller extends Component {
+export default class CreateSeller extends Component {
   constructor(props) {
     super(props);
 
@@ -307,56 +307,7 @@ export default class EditSeller extends Component {
       agentName: e.target.value
     });
   }
-  componentDidMount(){
-    axios.get('http://localhost:5000/seller/'+this.props.match.params.id)
-    .then( (res) => {
-          this.setState({
-            hearAboutUs : res.data.hearAboutUs,
-      firstName : res.data.firstName,
-      lastName : res.data.lastName,
-      phone : (res.data.phone),
-      email : res.data.email,
-      address : res.data.address,
-      postalCode : res.data.postalCode,
-      typeOfProperty : res.data.typeOfProperty,
-      bedrooms : (res.data.bedrooms),
-      bathrooms : (res.data.bathrooms),
-      hasgarage : (res.data.hasgarage),
-      garageSpaces : (res.data.garageSpaces),
-      parkingOnStreet : (res.data.parkingOnStreet),
-      otherParkingSpots : (res.data.otherParkingSpots),
-      hasbasement : (res.data.hasbasement),
-      basementFinished : (res.data.basementFinished),
-      hasPool : (res.data.hasPool),
-      lotSize : (res.data.lotSize),
-      yearBuilt : (res.data.yearBuilt),
-      typeOfRepair : res.data.typeOfRepair,
-      costForMint : (res.data.costForMint),
-      sellReason : res.data.sellReason,
-      hoaFees : res.data.hoaFees,
-      owedOnProp : (res.data.owedOnProp),
-      takePayoff : (res.data.takePayoff),
-      payAndTaxIsCurrent : (res.data.payAndTaxIsCurrent),
-      askPrice : (res.data.askPrice),
-      priceFlexible : (res.data.priceFlexible),
-      assessedValue : (res.data.assessedValue),
-      dateSellerBought : (res.data.dateSellerBought),
-      originalSellerPrice : (res.data.originalSellerPrice),
-      schoolDistrict : res.data.schoolDistrict,
-      quickComps : res.data.quickComps,
-      makingOffer : (res.data.makingOffer),
-      offerPrice : (res.data.offerPrice),
-      agentName : res.data.agentName,
-            
-          })
-        }).catch((err) => { console.log('Axios Error:', err); });
-    }
-    
-
   
-
-
-
   onSubmit(e){
     e.preventDefault();  
     const seller = {
@@ -399,7 +350,7 @@ export default class EditSeller extends Component {
     };
     
     
-    axios.post('http://localhost:5000/seller/update/'+this.props.match.params.id, seller).then(
+    axios.post('/seller/add', seller).then(
       (res) => {
         console.log('Axios:',res);
         console.log('Axios data:',res.data);

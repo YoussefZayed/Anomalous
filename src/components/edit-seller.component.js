@@ -3,7 +3,7 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/form.css";
 
-export default class CreateSeller extends Component {
+export default class EditSeller extends Component {
   constructor(props) {
     super(props);
 
@@ -23,6 +23,7 @@ export default class CreateSeller extends Component {
     this.onChange_otherParkingSpots = this.onChange_otherParkingSpots.bind(this);
     this.onChange_otherParkingSpots = this.onChange_otherParkingSpots.bind(this);
     this.onChange_hasbasement = this.onChange_hasbasement.bind(this);
+    this.onChange_basementFinished = this.onChange_basementFinished.bind(this);
     this.onChange_hasPool = this.onChange_hasPool.bind(this);
     this.onChange_lotSize = this.onChange_lotSize.bind(this);
     this.onChange_yearBuilt = this.onChange_yearBuilt.bind(this);
@@ -149,8 +150,9 @@ export default class CreateSeller extends Component {
   onChange_hasgarage(e) {
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
+    console.log(value);
     this.setState({
-      hasgarage: value
+      hasgarage: value 
     });
   }
   
@@ -185,15 +187,14 @@ export default class CreateSeller extends Component {
 
 
   onChange_basementFinished(e) {
-    
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       basementFinished: value
     });
   }
+
   onChange_hasPool(e) {
-    
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
@@ -307,7 +308,56 @@ export default class CreateSeller extends Component {
       agentName: e.target.value
     });
   }
+  componentDidMount(){
+    axios.get('/seller/'+this.props.match.params.id)
+    .then( (res) => {
+          this.setState({
+            hearAboutUs : res.data.hearAboutUs,
+      firstName : res.data.firstName,
+      lastName : res.data.lastName,
+      phone : (res.data.phone),
+      email : res.data.email,
+      address : res.data.address,
+      postalCode : res.data.postalCode,
+      typeOfProperty : res.data.typeOfProperty,
+      bedrooms : (res.data.bedrooms),
+      bathrooms : (res.data.bathrooms),
+      hasgarage : (res.data.hasgarage),
+      garageSpaces : (res.data.garageSpaces),
+      parkingOnStreet : (res.data.parkingOnStreet),
+      otherParkingSpots : (res.data.otherParkingSpots),
+      hasbasement : (res.data.hasbasement),
+      basementFinished : (res.data.basementFinished),
+      hasPool : (res.data.hasPool),
+      lotSize : (res.data.lotSize),
+      yearBuilt : (res.data.yearBuilt),
+      typeOfRepair : res.data.typeOfRepair,
+      costForMint : (res.data.costForMint),
+      sellReason : res.data.sellReason,
+      hoaFees : res.data.hoaFees,
+      owedOnProp : (res.data.owedOnProp),
+      takePayoff : (res.data.takePayoff),
+      payAndTaxIsCurrent : (res.data.payAndTaxIsCurrent),
+      askPrice : (res.data.askPrice),
+      priceFlexible : (res.data.priceFlexible),
+      assessedValue : (res.data.assessedValue),
+      dateSellerBought : (res.data.dateSellerBought),
+      originalSellerPrice : (res.data.originalSellerPrice),
+      schoolDistrict : res.data.schoolDistrict,
+      quickComps : res.data.quickComps,
+      makingOffer : (res.data.makingOffer),
+      offerPrice : (res.data.offerPrice),
+      agentName : res.data.agentName,
+            
+          })
+        }).catch((err) => { console.log('Axios Error:', err); });
+    }
+    
+
   
+
+
+
   onSubmit(e){
     e.preventDefault();  
     const seller = {
@@ -350,7 +400,7 @@ export default class CreateSeller extends Component {
     };
     
     
-    axios.post('http://localhost:5000/seller/add', seller).then(
+    axios.post('http://localhost:5000/seller/update/'+this.props.match.params.id, seller).then(
       (res) => {
         console.log('Axios:',res);
         console.log('Axios data:',res.data);
@@ -484,6 +534,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.hasgarage }
+                checked = {this.state.hasgarage }
                 onChange={this.onChange_hasgarage}
                 />
           </div>
@@ -508,6 +559,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.parkingOnStreet }
+                checked = {this.state.parkingOnStreet }
                 onChange={this.onChange_parkingOnStreet }
                 />
           </div>
@@ -532,6 +584,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.hasbasement }
+                checked = {this.state.hasbasement }
                 onChange={this.onChange_hasbasement }
                 />
           </div>
@@ -543,6 +596,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.basementFinished}
+                checked = {this.state.basementFinished }
                 onChange={this.onChange_basementFinished}
                 />
           </div>
@@ -555,6 +609,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.hasPool }
+                checked = {this.state.hasPool}
                 onChange={this.onChange_hasPool}
                 />
           </div>
@@ -651,6 +706,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.takePayoff }
+                checked = {this.state.takePayoff }
                 onChange={this.onChange_takePayoff }
                 />
           </div>
@@ -663,6 +719,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.payAndTaxIsCurrent }
+                checked = {this.state.payAndTaxIsCurrent }
                 onChange={this.onChange_payAndTaxIsCurrent }
                 />
           </div>
@@ -687,6 +744,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.priceFlexible }
+                checked = {this.state.priceFlexible }
                 onChange={this.onChange_priceFlexible }
                 />
           </div>
@@ -759,6 +817,7 @@ export default class CreateSeller extends Component {
                 type="checkbox" 
                 className="form-control col-8"
                 value={this.state.makingOffer }
+                checked = {this.state.makingOffer }
                 onChange={this.onChange_makingOffer }
                 />
           </div>
@@ -793,7 +852,7 @@ export default class CreateSeller extends Component {
           </br>
 
           <div className="form-group">
-            <input type="submit" value="Add Seller Info" className="btn btn-primary" />
+            <input type="submit" value="Update Seller Info" className="btn btn-primary" />
           </div>
           </form>
         </div>

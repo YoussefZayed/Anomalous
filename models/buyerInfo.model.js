@@ -9,7 +9,7 @@ const buyerSchema = new Schema(
     phone: { type: Number , required: true},
     email: { type: String },
     companyLocation : { type: String },
-    wantrehab : { type: String },
+    wantrehab : { type: Boolean },
     rehabTeamReady : { type: Boolean },
     areaTargets : { type: String },
     propertiesBoughtLastYear : {type : Number},

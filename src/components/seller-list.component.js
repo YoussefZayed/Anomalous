@@ -24,7 +24,7 @@ export default class SellerList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/seller/')
+    axios.get('/seller/')
      .then(response => {
        this.setState({ sellers: response.data });
      })
@@ -34,7 +34,7 @@ export default class SellerList extends Component {
   }
 
   deleteSeller(id) {
-    axios.delete('http://localhost:5000/seller/'+id)
+    axios.delete('/seller/'+id)
       .then(res => console.log(res.data));  this.setState({
       sellers: this.state.sellers.filter(el => el._id !== id)
     })

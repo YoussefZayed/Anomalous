@@ -8,13 +8,9 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-app.use(bodyParser.json());
 
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 
 
 
@@ -25,9 +21,11 @@ app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
 
-mongoose.connect(uri, { useUnifiedTopology: true , useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(uri, { useUnifiedTopology: true , useNewUrlParser: true, useCreateIndex: true }).then(() => console.log("MongoDB successfully connected"))
+.catch(err => console.log("Oops, there was an error please fix this asap, thx :"+err));;
 
-const connection = mongoose.connection;connection.once('open', () => {
+const connection = mongoose.connection;
+connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 

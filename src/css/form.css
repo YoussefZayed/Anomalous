@@ -1,0 +1,17 @@
+.from-group{
+    padding: 1%;
+    text-align: left;   
+    
+}
+label{
+    font-size: 20px;
+}
+.from-control{
+    opacity: 100;
+    background-color: blue;
+}
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: absolute;
+    opacity: 1;
+    pointer-events: auto;
+}

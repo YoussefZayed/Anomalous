@@ -43,7 +43,7 @@ export default class EditBuyer extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:5000/buyer/'+this.props.match.params.id)
+    axios.get('/buyer/'+this.props.match.params.id)
     .then( (res) => {
           this.setState({
             firstName : res.data.firstName,
@@ -173,6 +173,7 @@ export default class EditBuyer extends Component {
               className="form-control col-8"
               name="wantrehab"
               value={this.state.wantrehab}
+              checked = {this.state.wantrehab}
               onChange={this.handleInputChange}
               />
         </div>
@@ -185,6 +186,7 @@ export default class EditBuyer extends Component {
               className="form-control col-8"
               name="rehabTeamReady"
               value={this.state.rehabTeamReady}
+              checked = {this.state.rehabTeamReady}
               onChange={this.handleInputChange}
               />
         </div>
