@@ -103,7 +103,7 @@ export default class EditBuyer extends Component {
 
     render() {
       return (
-        <div>
+        <div className="topk container">
         <h1> Edit Buyer Info </h1>
         <form onSubmit = {this.onSubmit }>  
 

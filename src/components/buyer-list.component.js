@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "../css/form.css";
   
   const Buyer = props => (
     <tr>
@@ -52,7 +53,7 @@ import axios from 'axios';
   
       render() {
         return (
-        <div>
+        <div className="topk">
           <h3>Logged Exercises</h3>
           <table className="table">
             <thead className="thead-light">

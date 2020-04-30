@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/form.css";
 
 export default class CreateSeller extends Component {
@@ -339,14 +338,14 @@ export default class CreateSeller extends Component {
       payAndTaxIsCurrent : (this.state.payAndTaxIsCurrent),
       askPrice : (this.state.askPrice),
       priceFlexible : (this.state.priceFlexible),
-      assessedValue : (this.state.assessedValue),
-      dateSellerBought : (this.state.dateSellerBought),
-      originalSellerPrice : (this.state.originalSellerPrice),
-      schoolDistrict : this.state.schoolDistrict,
-      quickComps : this.state.quickComps,
-      makingOffer : (this.state.makingOffer),
-      offerPrice : (this.state.offerPrice),
-      agentName : this.state.agentName,
+      assessedValue: 0,
+      dateSellerBought : '',
+      originalSellerPrice : 0,
+      schoolDistrict : '',
+      quickComps: '',
+      makingOffer: false,
+      offerPrice: 0.0,
+      agentName : '',
     };
     
     
@@ -365,8 +364,8 @@ export default class CreateSeller extends Component {
 
   render() {
       return (
-        <div>
-          <h1> Add Seller Info </h1>
+        <div className="container topk">
+          <h4> Please add your information and we will contact you soon</h4>
           <form onSubmit = {this.onSubmit }>  
 
           <div className= "from-group row">
@@ -455,7 +454,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> Bedrooms : </label>
+            <label className= "col-4"> Number of Bedrooms : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -467,7 +466,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> Bathrooms : </label>
+            <label className= "col-4">Number of Bathrooms : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -478,11 +477,11 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
+          <div className= "from-group row vertspace">
             <label className= "col-4">Does it have a Garage: </label>
             <input 
                 type="checkbox" 
-                className="form-control col-8"
+                className="form-control col-8 "
                 value={this.state.hasgarage }
                 onChange={this.onChange_hasgarage}
                 />
@@ -502,8 +501,8 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
-            <label className= "col-4">is there parking on the street : </label>
+          <div className= "from-group row vertspace">
+            <label className= "col-4">parking on the street? </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -526,7 +525,7 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
+          <div className= "from-group row vertspace">
             <label className= "col-4"> does it have a Basement: </label>
             <input 
                 type="checkbox" 
@@ -537,7 +536,7 @@ export default class CreateSeller extends Component {
           </div>
 
 
-          <div className= "from-group row">
+          <div className= "from-group row vertspace">
             <label className= "col-4">is the basement finished : </label>
             <input 
                 type="checkbox" 
@@ -549,8 +548,8 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
-            <label className= "col-4"> has Pool: </label>
+          <div className= "from-group row vertspace">
+            <label className= "col-4"> does it have a Pool: </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -586,7 +585,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> Type Of Repair : </label>
+            <label className= "col-4"> Type Of Repair needed (if any) : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -598,7 +597,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">Cost For Mint : </label>
+            <label className= "col-4">Cost to Put In Mint Condition: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -610,7 +609,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> sell Reason: </label>
+            <label className= "col-4"> Why are you selling: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -622,7 +621,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4">HOA Fees : </label>
+            <label className= "col-4">Do you have HOA Fees  : </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -634,7 +633,7 @@ export default class CreateSeller extends Component {
 
 
           <div className= "from-group row">
-            <label className= "col-4"> Owed On Prop: </label>
+            <label className= "col-4">Amount owed on the property: </label>
             <input 
                 type="text" 
                 className="form-control col-8"
@@ -645,8 +644,8 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
-            <label className= "col-4"> Take Payoff: </label>
+          <div className= "from-group row vertspace">
+            <label className= "col-4"> Would You Take a Payoff: </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -657,8 +656,8 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
-            <label className= "col-4">Pay And Tax Is Current : </label>
+          <div className= "from-group row vertspace">
+            <label className= "col-4">Are Payments And Taxes Current: </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -681,8 +680,8 @@ export default class CreateSeller extends Component {
 
 
 
-          <div className= "from-group row">
-            <label className= "col-4"> Price Flexible: </label>
+          <div className= "from-group row vertspace">
+            <label className= "col-4"> Is that Price Flexible? </label>
             <input 
                 type="checkbox" 
                 className="form-control col-8"
@@ -691,102 +690,6 @@ export default class CreateSeller extends Component {
                 />
           </div>
 
-
-
-          <div className= "from-group row">
-            <label className= "col-4"> Assessed Value: </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.assessedValue }
-                onChange={this.onChange_assessedValue }
-                />
-          </div>
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4">Date Seller Bought Home: </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.dateSellerBought }
-                onChange={this.onChange_dateSellerBought }
-                />
-          </div>
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4">Original Price : </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.originalSellerPrice }
-                onChange={this.onChange_originalSellerPrice }
-                />
-          </div>
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4"> School District: </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.schoolDistrict }
-                onChange={this.onChange_schoolDistrict }
-                />
-          </div>
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4"> Quick Comps: </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.quickComps }
-                onChange={this.onChange_quickComps }
-                />
-          </div>
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4">Making Offer : </label>
-            <input 
-                type="checkbox" 
-                className="form-control col-8"
-                value={this.state.makingOffer }
-                onChange={this.onChange_makingOffer }
-                />
-          </div>
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4">Offer Price : </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.offerPrice }
-                onChange={this.onChange_offerPrice }
-                />
-          </div>
-
-
-
-
-          <div className= "from-group row">
-            <label className= "col-4">Agent Name : </label>
-            <input 
-                type="text" 
-                className="form-control col-8"
-                value={this.state.agentName }
-                onChange={this.onChange_agentName }
-                />
-          </div>
 
 
           <br>

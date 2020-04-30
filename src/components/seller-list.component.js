@@ -50,7 +50,7 @@ export default class SellerList extends Component {
 
     render() {
       return (
-      <div>
+      <div className= "topk container">
         <h3>Logged Exercises</h3>
         <table className="table">
           <thead className="thead-light">

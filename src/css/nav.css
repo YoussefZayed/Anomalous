@@ -1,0 +1,17 @@
+.right{
+    text-align: right;
+    background-position: 100%;
+}
+.little-right{
+    padding-left: 30%!important;
+}
+.minusbot{
+    margin-bottom: -5%;
+}
+body{
+    margin-top:0%;
+    background-image: url("../media/background.jpg");
+    background-size:cover;
+    background-position:top;
+    background-repeat: no-repeat
+}

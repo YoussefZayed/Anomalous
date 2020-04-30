@@ -1,0 +1,16 @@
+body{
+    margin-top:0%;
+    background-image: url("../media/home.jpg");
+    background-size:cover;
+    background-position:top;
+    background-repeat: no-repeat
+}
+.buttonsimg{
+    position: absolute;
+}
+.butnplzl{
+    margin-left: 40%;
+}
+.butnplzr{
+    margin-left: 70%;
+}

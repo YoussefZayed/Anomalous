@@ -1,5 +1,4 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import jwt_decode from "jwt-decode";
 // import setAuthToken from "./utils/setAuthToken";
@@ -15,6 +14,7 @@ import CreateSeller from "./components/create-seller.component";
 import BuyerList from "./components/buyer-list.component";
 import EditBuyer from "./components/edit-buyer.component";
 import CreateBuyer from "./components/create-buyer.component";
+import Home from "./components/home.component";
 // import Register from "./components/auth/Register";
 // import Login from "./components/auth/Login";
 
@@ -42,7 +42,7 @@ function App() {
   return (
     <Provider store={store}>
     <Router>
-    <div className="container">
+    <div >
       <Navbar />
         <br/>
 
@@ -52,7 +52,7 @@ function App() {
         <Route  path="/buyer" exact component={BuyerList} />
         <Route  path="/buyeredit/:id" component={EditBuyer} />
         <Route  path="/buyercreate" component={CreateBuyer} />
-
+        <Route exact path="/" component={Home} />
         {/* work in progress */}
         {/* <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} /> */}

@@ -77,27 +77,27 @@ export default class CreateBuyer extends Component {
 
     render() {
       return (
-        <div>
-        <h1> Add Buyer Info </h1>
+        <div className="container topk">
+         <h4> Please add your information and we will contact you soon</h4>
         <form onSubmit = {this.onSubmit }>  
 
-
-        <div className= "from-group row">
-          <label className= "col-4">First Name :</label>
+   
+        <div className= "'from-group row">
+          <label className= "name">First Name :</label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control"
               name = "firstName"
               value={this.state.firstName}
               onChange={this.handleInputChange}
               />
         </div>
         
-        <div className= "from-group row">
-          <label className= "col-4">Last Name :</label>
+        <div className= "'from-group row">
+          <label className= "name">Last Name :</label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name = "lastName"
               value={this.state.lastName}
               onChange={this.handleInputChange}
@@ -105,11 +105,11 @@ export default class CreateBuyer extends Component {
         </div>
 
 
-        <div className= "from-group row">
-          <label className= "col-4">Phone number: </label>
+        <div className= "'from-group row">
+          <label className= "name">Phone number: </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="phone"
               value={this.state.phone}
               onChange={this.handleInputChange}
@@ -117,11 +117,11 @@ export default class CreateBuyer extends Component {
         </div>
 
 
-        <div className= "from-group row">
-          <label className= "col-4">Email: </label>
+        <div className= "'from-group row">
+          <label className= "name">Email: </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="email"
               value={this.state.email}
               onChange={this.handleInputChange}
@@ -129,22 +129,22 @@ export default class CreateBuyer extends Component {
         </div>
 
         
-        <div className= "from-group row">
-          <label className= "col-4">Company Location: </label>
+        <div className= "'from-group row">
+          <label className= "name">Company Location: </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="companyLocation"
               value={this.state.companyLocation}
               onChange={this.handleInputChange}
               />
         </div>
         
-        <div className= "from-group row">
-          <label className= "col-4">want rehab: </label>
+        <div className= "'from-group row">
+          <label className= "col4 s12">Do you prefer move in ready or rehab?</label>
           <input 
               type="checkbox" 
-              className="form-control col-8"
+              className="form-control s12 "
               name="wantrehab"
               value={this.state.wantrehab}
               onChange={this.handleInputChange}
@@ -152,110 +152,113 @@ export default class CreateBuyer extends Component {
         </div>
 
         
-        <div className= "from-group row">
-          <label className= "col-4">Rehab Team Ready: </label>
+        <div className= "'from-group row vertspace">
+          <label className= "col4">Do you have rehab teams in place?</label>
           <input 
               type="checkbox" 
-              className="form-control col-8"
+              className="form-control s12 "
               name="rehabTeamReady"
               value={this.state.rehabTeamReady}
               onChange={this.handleInputChange}
               />
+              
         </div>
         
-        <div className= "from-group row">
-          <label className= "col-4">Area Targets: </label>
+        <div className= "'from-group row vertspace">
+          <label className= "name">What areas are you targeting? </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="areaTargets"
               value={this.state.areaTargets}
               onChange={this.handleInputChange}
               />
+              
+              
         </div>
         
-        <div className= "from-group row">
-          <label className= "col-4">Properties Bought LastYear: </label>
+        <div className= "'from-group row">
+          <label className= "name">How many properties did you buy last year? </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="propertiesBoughtLastYear"
               value={this.state.propertiesBoughtLastYear}
               onChange={this.handleInputChange}
               />
         </div>
         
-        <div className= "from-group row">
-          <label className= "col-4">properties Bought This Year: </label>
+        <div className= "'from-group row">
+          <label className= "name">How many properties do you plan to buy this year? </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="propertiesBoughtThisYear"
               value={this.state.propertiesBoughtThisYear}
               onChange={this.handleInputChange}
               />
         </div>
                 
-        <div className= "from-group row">
-          <label className= "col-4">bottleneck: </label>
+        <div className= "'from-group row">
+          <label className= "name">How come you don’t plan to buy (Double the amount stated above)?</label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="bottleneck"
               value={this.state.bottleneck}
               onChange={this.handleInputChange}
               />
         </div>
                 
-        <div className= "from-group row">
-          <label className= "col-4">Finance Method: </label>
+        <div className= "'from-group row">
+          <label className= "name">How do you finance?</label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="financeMethod"
               value={this.state.financeMethod}
               onChange={this.handleInputChange}
               />
         </div>
                 
-        <div className= "from-group row">
-          <label className= "col-4">Type Of Property: </label>
+        <div className= "'from-group row">
+          <label className= "name">Do you prefer single family homes or apartments? </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="typeOfProperty"
               value={this.state.typeOfProperty}
               onChange={this.handleInputChange}
               />
         </div>
                 
-        <div className= "from-group row">
-          <label className= "col-4">equity Or COCR Preferance: </label>
+        <div className= "'from-group row">
+          <label className= "name">Do you base your purchase price on equity or COCR? </label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="equityOrCOCRPreferance"
               value={this.state.equityOrCOCRPreferance}
               onChange={this.handleInputChange}
               />
         </div>
                 
-        <div className= "from-group row">
-          <label className= "col-4">equity Or COCR Expectation: </label>
+        <div className= "'from-group row">
+          <label className= "name">How much equity or COCR do you expect to make per house?</label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="equityOrCOCRExpectation"
               value={this.state.equityOrCOCRExpectation}
               onChange={this.handleInputChange}
               />
         </div>
                 
-        <div className= "from-group row">
-          <label className= "col-4">max Price: </label>
+        <div className= "'from-group row">
+          <label className= "name">What is your maximum purchase price?</label>
           <input 
               type="text" 
-              className="form-control col-8"
+              className="form-control "
               name="maxPrice"
               value={this.state.maxPrice}
               onChange={this.handleInputChange}
